@@ -582,6 +582,15 @@ Atualizar o campo código por URL
 				abrirModal();
 			}
 		}
+
+		function Colorir_Botao(id_botao, cor) {
+		  const botao = document.getElementById(id_botao);
+		  if (botao) {
+		    botao.style.backgroundColor = cor;
+		  } else {
+		    console.error(`Botão com o ID "${id_botao}" não encontrado.`);
+		  }
+		}   		
 	
 		window.onload = function () {
 	            let cor = "#8a6e69";
