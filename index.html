@@ -363,14 +363,14 @@ Atualizar o campo código por URL
 		<div class="input-group">
 			<label for="data" class="form-label">Data (DD/MM/AAAA)</label>
 			<input type="text" id="dataDigitada" class="form-control" inputmode="numeric" pattern="\d{2}/\d{2}/\d{4}" maxlength="10" placeholder="dd/mm/aaaa" required />
-			<button class="btn-limpar" onclick="limparData()">Limpar</button>
+			<button class="btn-limpar" id = "limpar_data" onclick="limpar_data()">Limpar</button>
 		</div>
 
 
 		<div class="input-group">
 			<label for="hora" class="form-label">Hora (HH:MM:SS)</label>
 			<input type="text" id="horaDigitada" class="form-control" inputmode="numeric" pattern="\d{2}:\d{2}:\d{2}" maxlength="8" placeholder="hh:mm:ss" required />
-			<button class="btn-limpar" onclick="limparHora()">Limpar</button>
+			<button class="btn-limpar"  id = "limpar_hora" onclick="limpar_hata()">Limpar</button>
 		</div>
 
 		<div class="btn-validar">
@@ -466,11 +466,11 @@ Atualizar o campo código por URL
         }
         
 
-		function limparData() {
+		function limpar_data() {
 			document.getElementById("dataDigitada").value = "";
 		}
 
-		function limparHora() {
+		function limpar_hata() {
 			document.getElementById("horaDigitada").value = "";
 		}
 
@@ -582,7 +582,13 @@ Atualizar o campo código por URL
 				abrirModal();
 			}
 		}
-
+	
+		window.onload = function () {
+	            let cor = "#8a6e69";
+	            Colorir_Botao("limpar_data", cor);
+	            Colorir_Botao("limpar_hora", cor);
+	        	 
+	            };
 	</script>
 </body>
 </html>
